@@ -1,0 +1,31 @@
+.main-page{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(20, 20, 20);
+}   
+.izquierda{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+    width: 50%;
+    padding-left: 50px;
+}
+.derecha {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.titulo{
+    align-items: center;
+
+}
