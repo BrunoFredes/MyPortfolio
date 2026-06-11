@@ -1,19 +1,32 @@
-import { useState } from 'react'
-import './App.css'
-import NavbarComponent from './components/navbarComponent/navbarComponent.tsx'
-import MainPageComponent from './components/mainPageComponent/mainPageComponent.tsx'
+import './App.css';
 
+import NavbarComponent from './components/NavbarComponent/navbarComponent';
+import HeroComponent from './components/HeroComponent/HeroComponent';
+import AboutComponent from './components/AboutComponent/AboutComponent';
+import SkillsComponent from './components/SkillsComponent/SkillsComponent';
+import ProjectsComponent from './components/ProjectsComponent/ProjectsComponent';
+import ContactComponent from './components/ContactComponent/ContactComponent';
+import TalkComponent from './components/TalkComponent/TalkComponent';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <NavbarComponent />
-      <MainPageComponent />
-    </div>
+    <>
     
-  )
+      <NavbarComponent />
+
+      <HeroComponent />
+
+      <AboutComponent />
+
+      <SkillsComponent />
+
+      <ProjectsComponent />
+
+      <ContactComponent />
+      
+      <TalkComponent />
+    </>
+  );
 }
 
-export default App
+export default App;
