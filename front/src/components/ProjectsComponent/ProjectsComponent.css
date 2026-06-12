@@ -140,6 +140,35 @@ a{
 
     cursor:pointer;
 }
+.image-modal-content{
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    border-radius:20px;
+}
+.link-button a{
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 28px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    transition:.3s;
+}
+.link-button   a:hover{
+
+    
+    border-color:#8b7cff;
+
+    transform:translateY(-3px);
+}
+
 
 @media (max-width: 1024px){
     .projects-grid{

@@ -11,6 +11,11 @@
     1fr 1fr;
 
     gap:60px;
+    
+    scroll-margin-top:150px;
+    
+
+
 }
 
 .about-left h2{

@@ -1,16 +1,21 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./ProjectsComponent.css";
 import JiraChillImage from "../../assets/JiraChill.png";
+import LandingPageImage from "../../assets/lis-pagina.jpg";
+import lisfullpage from "../../assets/lis-fulpage.jpeg";
+
 
 
 
 const projects = [
   
-
+  
 
   {
     title: "Kiosko Manager",
     image: "https://via.placeholder.com/400x200",
+    fullpage: "https://via.placeholder.com/800x400",
     description:
       "Sistema de gestión de stock, ventas y productos desarrollado con ASP.NET, PostgreSQL y React.",
     technologies:
@@ -20,29 +25,60 @@ const projects = [
   {
     title: "Jira-Chill-Project",
     image: JiraChillImage,
+    fullpage: JiraChillImage,
     description:
       "Aplicación de gestión de tareas inspirada en Jira con autenticación y CRUD completo.",
     technologies:
       "React • TypeScript • Node.js",
+    github: "https://github.com/BrunoFredes/jira-chill-project",
+    demo: "https://jira-chill-project.vercel.app/",
   },
 
   {
     title: "Landing Page",
-    image: "LandingPageImage",
+    image: LandingPageImage,
+    fullpage: lisfullpage,
     description:
       "Landing moderna enfocada en diseño responsive y experiencia de usuario.",
     technologies:
       "HTML • CSS • React",
   },
+  
 ];
+
 
 
 function ProjectsComponent() {
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);  
 
+ useEffect(() => {
+
+  console.log(
+    "useEffect ejecutado",
+    selectedImage
+  );
+
+  if(selectedImage){
+
+    document.body.style.overflow =
+      "hidden";
+
+  }else{
+
+    document.body.style.overflow =
+      "auto";
+
+  }
+
+}, [selectedImage]);
+
+
+
   return (
   <>
+
+    
     <section
       id="projects"
       className="projects"
@@ -68,7 +104,7 @@ function ProjectsComponent() {
                 src={project.image}
                 alt={project.title}
                 onClick={() =>
-                  setSelectedImage(project.image)
+                  setSelectedImage(project.fullpage)
                 }
               />
               
@@ -91,13 +127,29 @@ function ProjectsComponent() {
 
               <div className="project-buttons">
 
-                <button>
-                  Github
-                </button>
+                
+                  <button className="link-button">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  </button>
+            
 
-                <button>
-                  Demo
-                </button>
+                
+                  <button className="link-button">
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Demo
+                    </a>
+                  </button>
+                
 
               </div>
 
@@ -123,6 +175,7 @@ function ProjectsComponent() {
             alt="preview"
             className="image-modal-content"
           />
+          
         </div>
       )
     }
